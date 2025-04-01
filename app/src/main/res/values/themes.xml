@@ -2,8 +2,27 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Megaapp" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/red</item>
     </style>
 
-    <style name="Theme.Megaapp" parent="Base.Theme.Megaapp" />
+    <style name="Theme.Megaapp" parent="Base.Theme.Megaapp" >
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="button" >
+        <item name="android:state_selected">true</item>
+        <item  name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:background">@drawable/bg_button</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+    <style name="buttonBuy" parent="button">
+    </style>
+    <style name="buttonZakaz" parent="button">
+        <item name="android:state_selected">true</item>
+        <item  name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">@color/pink</item>
+        <item name="android:color">@color/pink</item>
+        <item name="android:background">@drawable/bg_button_bord</item>
+    </style>
 </resources>
