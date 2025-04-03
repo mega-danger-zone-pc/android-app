@@ -5,8 +5,21 @@
     <string name="prompt_email">Email</string>
     <string name="action_sign_in">Войти или зарегестрироваться</string>
     <string name="text_btn_custom_build">Своя сборка</string>
+    <string name="text_btn_first_act">Принять судьбу</string>
     <string name="text_tovar_no_empty">В наличии</string>
     <string name="text_tovar_empty">Отсутствует</string>
     <string name="buy">Купить</string>
-    <string name="zakazat">Заказать</string>
+    <string name="order">Заказать</string>
+    <string name="more_details">Подробнее</string>
+    <string name="email">Почта</string>
+    <string name="firstName">Имя</string>
+    <string name="adres">Адрес</string>
+    <string name="postalIndex">Почтовый индекс</string>
+    <string name="ceil_all">Общая стоимость:</string>
+    <string name="save">Сохранить</string>
+    <string name="harakter">Характеристики</string>
+    <string name="mosh">Производительность</string>
+    <string name="v_order">В корзину</string>
+    <string name="title_first_activity">Ваш игровой опыт взлетит в небеса!</string>
+    <string name="desc_first_activity">Мы делаем абсолютно всё для того, чтобы цены оставались приятными, а качество было все также на высоте</string>
 </resources>

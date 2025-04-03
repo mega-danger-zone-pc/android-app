@@ -30,16 +30,27 @@ android {
         viewBinding = true
     }
 }
-
 dependencies {
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 
-    implementation("androidx.appcompat:appcompat:1.7.0")
-    implementation("com.google.android.material:material:1.12.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.2.1")
-    implementation("androidx.annotation:annotation:1.9.1")
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.7")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.7")
+    implementation("androidx.startup:startup-runtime:1.1.1") // Обновлено
+    implementation("androidx.appcompat:appcompat:1.6.1") // Уменьшена версия для совместимости
+    implementation("com.google.android.material:material:1.10.0") // Проверенная стабильная версия
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4") // Проверенная стабильная версия
+    implementation("androidx.annotation:annotation:1.6.0")
+
+    implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
+
+    implementation("com.android.support:multidex:1.0.3")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("androidx.core:core-animation:1.0.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.2.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 }

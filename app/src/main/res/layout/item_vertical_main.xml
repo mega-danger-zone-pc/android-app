@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="7dp"
+    android:outlineProvider="background"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_round2"
+    android:backgroundTint="@color/white"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:layout_height="150dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/smoke3"
+        android:src="@drawable/image_tovar_csas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundImageView" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_toEndOf="@+id/imageView"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Сборка Ахмед"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="игровая"
+            android:textColor="@color/smoke2"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/textViewDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/textViewTitle"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto"
+            android:text="Лучшее за низкую цену!!"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:scrollHorizontally="false"
+            android:textColor="@color/smoke" />
+
+        <TextView
+            android:id="@+id/textViewCeil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="119 999₽"
+            android:textColor="@color/red" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <Button
+            style="@style/buttonBuy"
+            android:layout_weight="1"
+            android:id="@+id/buttonDetails"
+            android:layout_width="0dp"
+            android:backgroundTint="@color/pink"
+            android:layout_height="match_parent"
+            android:text="@string/more_details"
+            android:layout_marginHorizontal="10dp"/>
+
+        <Button
+            style="@style/buttonBuy"
+            android:layout_weight="1"
+            android:id="@+id/buttonBuy"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:drawableEnd="@drawable/ic_shopping_cart"
+            android:text="@string/buy"
+            android:layout_marginHorizontal="10dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

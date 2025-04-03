@@ -2,63 +2,90 @@ package com.example.mega_app;
 
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CardShowFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.imageview.ShapeableImageView;
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
+
+import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class CardShowFragment extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public CardShowFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CardShowFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CardShowFragment newInstance(String param1, String param2) {
+    private static final String ARG_ITEM = "item_selected";
+    public static CardShowFragment newInstance(Item item) {
         CardShowFragment fragment = new CardShowFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putSerializable(ARG_ITEM, item);
         fragment.setArguments(args);
         return fragment;
     }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
+    ConstraintLayout constraintLayoutTOP;
+    BottomNavigationView bottomNavigationView;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card_show, container, false);
+        View view = inflater.inflate(R.layout.fragment_card_show, container, false);
+
+        constraintLayoutTOP = getActivity().findViewById(R.id.constraintLayoutTOP);
+        bottomNavigationView = getActivity().findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.animate().translationY(bottomNavigationView.getHeight()).setDuration(100).withEndAction(() -> bottomNavigationView.setVisibility(View.GONE)).start();
+        constraintLayoutTOP.animate().translationY(-constraintLayoutTOP.getHeight()).setDuration(100).withEndAction(() -> constraintLayoutTOP.setVisibility(View.GONE)).start();
+
+        if (getArguments() != null) {
+            Item item = (Item) getArguments().getSerializable(ARG_ITEM);
+
+            if (item != null) {
+                ViewPager2 viewPagerImages = view.findViewById(R.id.viewPagerImages);
+                List<String> imageUrls = new ArrayList<>();
+
+                imageUrls.add(item.getImageUrl());
+                if (item.getImagesUrl() != null) {
+                    for (String s: item.getImagesUrl()) {
+                        imageUrls.add(s);
+                    }
+                }
+
+                ImageAdapter adapter = new ImageAdapter(getContext(), imageUrls);
+                viewPagerImages.setAdapter(adapter);
+
+                TabLayout tabLayout = view.findViewById(R.id.tabLayoutImages);
+
+                new TabLayoutMediator(tabLayout, viewPagerImages, new TabLayoutMediator.TabConfigurationStrategy() {
+                    @Override
+                    public void onConfigureTab(TabLayout.Tab tab, int position) {
+                    }
+                }).attach();
+
+                TextView title = view.findViewById(R.id.textViewTitle);
+                TextView description = view.findViewById(R.id.textViewDesc);
+                //TextView price = view.findViewById(R.id.textViewCeil);
+
+                view.findViewById(R.id.imageButtonBack).setOnClickListener(v -> toBack());
+
+                title.setText(item.getName());
+                description.setText(item.getDescription());
+                //price.setText(new DecimalFormat("#,##0.00").format(item.getPrice()) + "₽");
+            }
+        }
+
+        return view;
+    }
+
+    private void toBack() {
+        requireActivity().getSupportFragmentManager().popBackStack();
+        bottomNavigationView.animate().translationY(0).setDuration(100).withStartAction(() -> bottomNavigationView.setVisibility(View.VISIBLE)).start();
+        constraintLayoutTOP.animate().translationY(0).setDuration(100).withStartAction(() -> constraintLayoutTOP.setVisibility(View.VISIBLE)).start();
     }
 }
