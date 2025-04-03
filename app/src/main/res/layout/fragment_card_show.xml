@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    tools:context=".CardShowFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="70dp">
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingTop="4dp"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:layout_marginTop="10dp"
+                android:id="@+id/viewPagerImages"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayoutImages"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/white"
+                app:tabIndicatorGravity="center"
+                app:tabMode="fixed"
+                app:tabGravity="center"
+                app:tabTextColor="@color/black"
+                app:tabIndicatorColor="@color/black"
+                app:tabRippleColor="@color/black"
+                app:tabSelectedTextColor="@color/pink"/>
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shapeableImageView"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="Сборка Взрыв" />
+
+            <TextView
+                android:id="@+id/textViewDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTitle"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/smoke"
+                android:fontFamily="@font/roboto"
+                android:text="Лучшая в своем роде возможность спалить свой дом благодаря новой ревизии KSAS на 66666 вольт. Попробуйте нашу новую невероятную сборку, которая оставит очень яркий и жгучий след на всей вашей дальнейшей жизни."
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shapeableImageView"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="@string/harakter" />
+
+            <TextView
+                android:id="@+id/textViewHaraker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTitle"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/smoke"
+                android:fontFamily="@font/roboto"
+                android:text="Видеокарта: говна кала\nМатери: нет\nПроцессор: умер\nБля миша я заебался пиздец\nЯ не хочу быть дизайнером\n\nЗдесь онли текстом. Я заебусь оформлять, а ты заебешься переносить."
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/shapeableImageView"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/roboto_medium"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="@string/mosh" />
+
+            <TextView
+                android:id="@+id/textViewMosh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewTitle"
+                android:layout_marginTop="7dp"
+                android:textColor="@color/smoke"
+                android:fontFamily="@font/roboto"
+                android:text="Пабджи: 300фпс\nДота 2: 5000фпс\nКиберпанк: 30фпс"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:layout_weight="1"
+            android:id="@+id/imageButtonBack"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/bg_round2"
+            android:backgroundTint="@color/pink"
+            android:backgroundTintMode="add"
+            android:padding="10dp"
+            android:src="@drawable/ic_back" />
+
+        <Button
+            android:layout_weight="5"
+            style="@style/Widget.Material3.Button.Icon"
+            android:backgroundTint="@color/pink"
+            android:background="@drawable/bg_round"
+            android:text="@string/v_order"
+            android:drawableEnd="@drawable/ic_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_medium"
+            android:textStyle="bold"
+            android:textSize="18dp" />
+
+    </LinearLayout>
+
+</FrameLayout>

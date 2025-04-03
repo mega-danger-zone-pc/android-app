@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="7dp"
+    android:outlineProvider="background"
+    android:background="@drawable/bg_round2"
+    android:backgroundTint="@color/white"
+    android:layout_margin="15dp"
+    android:layout_width="190dp"
+    android:layout_height="260dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        android:id="@+id/imageView"
+        android:adjustViewBounds="true"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/smoke3"
+        android:src="@drawable/image_tovar_csas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:backgroundTint="@color/white"
+        android:background="@drawable/bg_round"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="-16dp"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            android:text="Сборка Разрыв" />
+
+        <TextView
+            android:id="@+id/textViewCeil"
+            android:layout_marginTop="4dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:gravity="center"
+            android:textColor="@color/red"
+            android:textSize="19sp"
+            android:text="266 666₽" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_italic"
+            android:gravity="center"
+            android:text="@string/text_tovar_no_empty"
+            android:textColor="@color/red"
+            android:textStyle="italic"
+            android:textSize="12sp" />
+
+        <Button
+            style="@style/buttonBuy"
+            android:id="@+id/buttonDetails"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:backgroundTint="@color/pink"
+            android:textSize="10sp"
+            android:text="@string/more_details"/>
+
+        <Button
+            style="@style/buttonBuy"
+            android:id="@+id/buttonBuy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/buy"
+            android:drawableEnd="@drawable/ic_shopping_cart"/>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
