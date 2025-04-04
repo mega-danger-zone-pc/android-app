@@ -109,7 +109,7 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         holder.title.setText(item.getName());
         holder.group.setText(item.getCategory());
         holder.description.setText(item.getDescription());
-        holder.price.setText(new DecimalFormat("#,##0.00").format(item.getPrice()) + "₽");
+        holder.price.setText(item.getPriceText());
         Glide.with(context).load(item.getImageUrl()).error(R.drawable.error_image).into(holder.imageView);
         holder.buyButton.setOnClickListener(v -> listener.onBuyClick(item));
         //holder.orderButton.setOnClickListener(v -> listener.onOrderClick(item));
@@ -119,7 +119,7 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private void bindHorizontalView(HorizontalViewHolder holder, Item item) {
         holder.title.setText(item.getName());
-        holder.price.setText(new DecimalFormat("#,##0.00").format(item.getPrice()) + "₽");
+        holder.price.setText(item.getPriceText());
         Glide.with(context).load(item.getImageUrl()).error(R.drawable.error_image).into(holder.imageView);
         //holder.orderButton.setOnClickListener(v -> listener.onOrderClick(item));
         holder.buyButton.setOnClickListener(v -> listener.onBuyClick(item));
@@ -130,7 +130,7 @@ public class ItemAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private void bindCardView(CardViewHolder holder, Item item) {
         holder.title.setText(item.getName());
         holder.description.setText(item.getDescription());
-        holder.price.setText(new DecimalFormat("#,##0.00").format(item.getPrice()) + "₽");
+        holder.price.setText(item.getPriceText());
         Glide.with(context).load(item.getImageUrl()).error(R.drawable.error_image).into(holder.imageView);
         holder.deleteButton.setOnClickListener(v -> listener.onDeleteClick(item));
     }

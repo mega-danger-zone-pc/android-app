@@ -1,7 +1,10 @@
 package com.example.mega_app;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Locale;
 
 public class Item implements Serializable {
     private String name;
@@ -11,7 +14,6 @@ public class Item implements Serializable {
     private String imageUrl;
     private List<String> imagesUrl;
 
-    // Конструктор
     public Item(String name, String category, String description, double price, String imageUrl) {
         this.name = name;
         this.category = category;
@@ -20,7 +22,6 @@ public class Item implements Serializable {
         this.imageUrl = imageUrl;
     }
 
-    // Геттеры и сеттеры
     public String getName() {
         return name;
     }
@@ -47,6 +48,14 @@ public class Item implements Serializable {
 
     public double getPrice() {
         return price;
+    }
+    public String getPriceText() {
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.forLanguageTag("ru-RU"));
+        symbols.setGroupingSeparator(' ');
+        symbols.setDecimalSeparator(',');
+
+        DecimalFormat decimalFormat = new DecimalFormat("#,##0.00", symbols);
+        return decimalFormat.format(this.getPrice()) + " ₽";
     }
 
     public void setPrice(double price) {

@@ -49,6 +49,7 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.16.0")
     implementation("androidx.core:core-animation:1.0.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+    annotationProcessor("com.google.code.gson:gson:2.10.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

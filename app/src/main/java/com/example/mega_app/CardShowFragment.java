@@ -70,13 +70,13 @@ public class CardShowFragment extends Fragment {
 
                 TextView title = view.findViewById(R.id.textViewTitle);
                 TextView description = view.findViewById(R.id.textViewDesc);
-                //TextView price = view.findViewById(R.id.textViewCeil);
+                TextView price = view.findViewById(R.id.textViewCeil);
 
                 view.findViewById(R.id.imageButtonBack).setOnClickListener(v -> toBack());
 
                 title.setText(item.getName());
                 description.setText(item.getDescription());
-                //price.setText(new DecimalFormat("#,##0.00").format(item.getPrice()) + "₽");
+                price.setText(item.getPriceText());
             }
         }
 

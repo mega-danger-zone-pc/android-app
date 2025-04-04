@@ -12,14 +12,31 @@
     <string name="order">Заказать</string>
     <string name="more_details">Подробнее</string>
     <string name="email">Почта</string>
+    <string name="password">Пароль</string>
     <string name="firstName">Имя</string>
     <string name="adres">Адрес</string>
     <string name="postalIndex">Почтовый индекс</string>
     <string name="ceil_all">Общая стоимость:</string>
     <string name="save">Сохранить</string>
+    <string name="enter">Войти</string>
+    <string name="regist">Зарегистрироваться</string>
     <string name="harakter">Характеристики</string>
     <string name="mosh">Производительность</string>
     <string name="v_order">В корзину</string>
+    <string name="reg_login">Нет аккаунта? <b><font color="#2196F3">Зарегистрируйтесь</font></b></string>
+    <string name="login_reg">Есть аккаунт? <b><font color="#2196F3">Авторизуйтесь</font></b></string>
     <string name="title_first_activity">Ваш игровой опыт взлетит в небеса!</string>
     <string name="desc_first_activity">Мы делаем абсолютно всё для того, чтобы цены оставались приятными, а качество было все также на высоте</string>
+
+    <string name="registration_was_suc">Регистрация прошла успешно</string>
+    <string name="password_incorret">Пароли не совпадают</string>
+    <string name="incorrect_d_b">Неверный формат даты рождения</string>
+    <string name="incorrect_mobile">Неверный формат мобильного номера</string>
+    <string name="incorrect_email">Неверный формат email</string>
+    <string name="incorrect_name">Введите имя и фамилию</string>
+    <string name="incorrect_all_fields">Пожалуйста, заполните все поля</string>
+    <string name="acc_not_found">Учётная запись не найдена</string>
+    <string name="pass_suc_change">Пароль успешно изменён</string>
+    <string name="pass_invalid">Неверный логин или пароль. Попробуйте снова.</string>
+    <string name="invalid_password">Неверный пароль. Он должен содержать от 8 до 16 символов и включать только английские буквы, цифры и определенные специальные символы.</string>
 </resources>
