@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/smoke3"
+        android:scaleType="centerCrop"
         android:src="@drawable/image_tovar_csas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +44,8 @@
             android:gravity="center"
             android:textSize="21sp"
             android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="start"
             android:text="Сборка Разрыв" />
 
         <TextView

@@ -24,6 +24,7 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/viewPagerImages"
                 android:layout_width="match_parent"
+                android:scaleType="centerCrop"
                 android:layout_height="380dp"/>
 
             <com.google.android.material.tabs.TabLayout
@@ -52,6 +53,22 @@
                 android:text="Сборка Взрыв" />
 
             <TextView
+                android:id="@+id/textViewCeil"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:gravity="left"
+                android:textColor="@color/red"
+                android:textSize="31sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_round"
+                android:backgroundTint="@color/smoke3"
+                android:paddingHorizontal="15dp"
+                android:paddingVertical="3dp"
+                android:text="266 666₽" />
+
+            <TextView
                 android:id="@+id/textViewDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -59,7 +76,7 @@
                 android:layout_marginTop="7dp"
                 android:textColor="@color/smoke"
                 android:fontFamily="@font/roboto"
-                android:text="Лучшая в своем роде возможность спалить свой дом благодаря новой ревизии KSAS на 66666 вольт. Попробуйте нашу новую невероятную сборку, которая оставит очень яркий и жгучий след на всей вашей дальнейшей жизни."
+                android:text="ожидает апи"
                 android:textSize="18sp" />
 
             <TextView
@@ -80,7 +97,7 @@
                 android:layout_marginTop="7dp"
                 android:textColor="@color/smoke"
                 android:fontFamily="@font/roboto"
-                android:text="Видеокарта: говна кала\nМатери: нет\nПроцессор: умер\nБля миша я заебался пиздец\nЯ не хочу быть дизайнером\n\nЗдесь онли текстом. Я заебусь оформлять, а ты заебешься переносить."
+                android:text="ожидает апи"
                 android:textSize="18sp" />
 
             <TextView
@@ -101,7 +118,7 @@
                 android:layout_marginTop="7dp"
                 android:textColor="@color/smoke"
                 android:fontFamily="@font/roboto"
-                android:text="Пабджи: 300фпс\nДота 2: 5000фпс\nКиберпанк: 30фпс"
+                android:text="ожидает апи"
                 android:textSize="18sp" />
 
         </LinearLayout>

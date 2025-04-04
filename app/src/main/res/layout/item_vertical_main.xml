@@ -21,6 +21,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:background="@color/smoke3"
+        android:scaleType="centerCrop"
         android:src="@drawable/image_tovar_csas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +46,8 @@
             android:fontFamily="@font/roboto_medium"
             android:text="Сборка Ахмед"
             android:textSize="20dp"
+            android:maxLines="1"
+            android:ellipsize="start"
             android:textStyle="bold" />
 
         <TextView
